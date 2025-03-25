@@ -4,7 +4,6 @@ return {
   config = function()
     local nvimtree = require("nvim-tree")
 
-     
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
@@ -13,7 +12,7 @@ return {
         width = 35,
         relativenumber = true,
       },
-       
+
       renderer = {
         indent_markers = {
           enable = true,
@@ -21,15 +20,13 @@ return {
         icons = {
           glyphs = {
             folder = {
-              arrow_closed = "😌",  
-              arrow_open = "🫣",  
+              arrow_closed = "😌",
+              arrow_open = "🫣",
             },
           },
         },
       },
-       
-       
-       
+
       actions = {
         open_file = {
           window_picker = {
@@ -45,10 +42,9 @@ return {
       },
     })
 
-     
-    local keymap = vim.keymap  
+    local keymap = vim.keymap
 
-    keymap.set("n", "<A-e>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })  
-    keymap.set("n", "<F5>", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })  
-  end
+    keymap.set("n", "<A-e>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+    keymap.set("n", "<F5>", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
+  end,
 }

@@ -5,7 +5,7 @@ return {
     local alpha = require("alpha")
     local dashboard = require("alpha.themes.dashboard")
 
-    dashboard.section.header.val = {    
+    dashboard.section.header.val = {
       "██████╗░██╗░░░██╗████████╗███████╗    ███╗░░░███╗░█████╗░██████╗░███████╗",
       "██╔══██╗╚██╗░██╔╝╚══██╔══╝██╔════╝    ████╗░████║██╔══██╗██╔══██╗██╔════╝",
       "██████╦╝░╚████╔╝░░░░██║░░░█████╗░░    ██╔████╔██║██║░░██║██║░░██║█████╗░░",
@@ -17,7 +17,7 @@ return {
     dashboard.section.buttons.val = {
       dashboard.button("M-e", "🗃️  > Toggle file explorer", "<cmd>NvimTreeToggle<CR>"),
       dashboard.button("SPC sr", "♻️   > Restore Session For Current Directory", "<cmd>SessionRestore<CR>"),
-      dashboard.button("f", "📂  > File search","<cmd>Telescope find_files<cr>"),
+      dashboard.button("f", "📂  > File search", "<cmd>Telescope find_files<cr>"),
       dashboard.button("q", "💔  > Quit NVIM", "<cmd>qa<CR>"),
     }
 

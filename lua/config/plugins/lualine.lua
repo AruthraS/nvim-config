@@ -3,7 +3,7 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     local lualine = require("lualine")
-    local lazy_status = require("lazy.status")  
+    local lazy_status = require("lazy.status")
 
     local colors = {
       blue = "#65D1FF",
@@ -49,7 +49,6 @@ return {
       },
     }
 
-     
     lualine.setup({
       options = {
         theme = my_lualine_theme,

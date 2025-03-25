@@ -1,2 +1,2 @@
-require("profile.core")
-require("profile.lazy")
+require("config.core")
+require("config.lazy")

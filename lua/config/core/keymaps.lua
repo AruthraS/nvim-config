@@ -21,4 +21,4 @@ keymap.set("n", "<C-Right>", "<C-w>l", { desc = "Move to right split" })
 keymap.set("n", "<C-Up>", "<C-w>k", { desc = "Move to upper split" })
 keymap.set("n", "<C-Down>", "<C-w>j", { desc = "Move to lower split" })
 
-keymap.set("i", "<C-s>", "<ESC><cmd>w<CR>i", { desc = "Save and return to insert mode" })
+keymap.set("i", "<C-s>", "<ESC><cmd>w<CR>", { desc = "Save and return to insert mode" })
