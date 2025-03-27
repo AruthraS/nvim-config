@@ -5,15 +5,12 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
-     
     local mason = require("mason")
 
-     
     local mason_lspconfig = require("mason-lspconfig")
 
     local mason_tool_installer = require("mason-tool-installer")
 
-     
     mason.setup({
       ui = {
         icons = {
@@ -25,7 +22,7 @@ return {
     })
 
     mason_lspconfig.setup({
-       
+
       ensure_installed = {
         "html",
         "cssls",
@@ -38,8 +35,9 @@ return {
 
     mason_tool_installer.setup({
       ensure_installed = {
-        "prettier",  
-        "stylua",  
+        "prettier",
+        "stylua",
+        "google-java-format",
       },
     })
   end,
