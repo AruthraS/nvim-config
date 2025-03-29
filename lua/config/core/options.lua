@@ -40,3 +40,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGai
   end,
   pattern = { "*" },
 })
+
+vim.g.autosave_enabled = true
+vim.g.autosave_disable_inside_paths = { vim.fn.stdpath('config') }
