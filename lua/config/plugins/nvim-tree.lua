@@ -41,10 +41,5 @@ return {
         ignore = false,
       },
     })
-
-    local keymap = vim.keymap
-
-    keymap.set("n", "<A-e>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
-    keymap.set("n", "<F5>", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
   end,
 }

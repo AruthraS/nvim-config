@@ -21,4 +21,28 @@ keymap.set("n", "<C-Right>", "<C-w>l", { desc = "Move to right split" })
 keymap.set("n", "<C-Up>", "<C-w>k", { desc = "Move to upper split" })
 keymap.set("n", "<C-Down>", "<C-w>j", { desc = "Move to lower split" })
 
-keymap.set("i", "<C-s>", "<ESC><cmd>w<CR>", { desc = "Save and return to insert mode" })
+local save = function()
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<ESC>", true, true, true), "n", false)
+  vim.cmd("w")
+  print("File Saved ✅ ")
+end
+keymap.set({ "i", "n" }, "<C-s>", save, { desc = "Save File" })
+
+keymap.set("n", "<A-e>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+
+local refresh = function()
+  vim.cmd("NvimTreeRefresh")
+  vim.cmd("checktime")
+  print("Repository Refreshed 🧊 ")
+end
+keymap.set("n", "<F5>", refresh, { desc = "Refresh file explorer" })
+
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  callback = function()
+    local term = vim.bo.filetype
+    if term == "" or term == "terminal" then
+      vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
+    end
+  end,
+})

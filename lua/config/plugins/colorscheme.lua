@@ -47,7 +47,7 @@ local flow_config = function()
     theme = {
       style = "dark",
       contrast = "default",
-      transparent = false,
+      transparent = true,
     },
     colors = {
       mode = "default", -- "default" | "dark" | "light"

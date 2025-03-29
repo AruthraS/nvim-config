@@ -29,3 +29,14 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.swapfile = false
+
+vim.o.autoread = true
+
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+  callback = function()
+    if vim.fn.mode() ~= "c" then
+      vim.cmd("checktime")
+    end
+  end,
+  pattern = { "*" },
+})
