@@ -22,7 +22,6 @@ return {
     })
 
     mason_lspconfig.setup({
-
       ensure_installed = {
         "html",
         "cssls",
@@ -30,7 +29,10 @@ return {
         "lua_ls",
         "graphql",
         "pyright",
+        "ts_ls",
+        "gopls",
       },
+      automatic_installation = true,
     })
 
     mason_tool_installer.setup({

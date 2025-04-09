@@ -3,6 +3,8 @@ return {
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
     local nvimtree = require("nvim-tree")
+    local keymap = vim.keymap
+    local api = require("nvim-tree.api")
 
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
@@ -35,11 +37,14 @@ return {
         },
       },
       filters = {
-        custom = { ".DS_Store" },
+        dotfiles = false,
+        custom = { "^.git$" },
       },
       git = {
         ignore = false,
       },
+      keymap.set("n", "vs", api.node.open.vertical, { desc = "Open: Vertical split" }),
+      keymap.set("n", "hs", api.node.open.horizontal, { desc = "Open: Horizontal split" }),
     })
   end,
 }

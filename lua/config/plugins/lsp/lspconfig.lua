@@ -79,7 +79,7 @@ return {
       ["graphql"] = function()
         lspconfig["graphql"].setup({
           capabilities = capabilities,
-          filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+          filetypes = { "graphql", "gql", "typescriptreact", "javascriptreact" },
         })
       end,
       ["lua_ls"] = function()
@@ -93,6 +93,41 @@ return {
               },
               completion = {
                 callSnippet = "Replace",
+              },
+            },
+          },
+        })
+      end,
+      ["tsserver"] = function()
+        lspconfig["tsserver"].setup({
+          capabilities = capabilities,
+          filetypes = {
+            "javascript",
+            "javascriptreact",
+            "javascript.jsx",
+            "typescript",
+            "typescriptreact",
+            "typescript.tsx",
+          },
+          settings = {
+            completions = {
+              completeFunctionCalls = true,
+            },
+          },
+        })
+      end,
+      ["gopls"] = function()
+        lspconfig["gopls"].setup({
+          capabilities = capabilities,
+          cmd = { "gopls" },
+          filetypes = { "gomod", "gowork", "gotmpl", "go" },
+          root_dir = require("lspconfig/util").root_pattern("go.mod", "go.work", ".git"),
+          settings = {
+            gopls = {
+              completeUnimported = true,
+              usePLaceholders = true,
+              analyses = {
+                unusedparams = true,
               },
             },
           },
