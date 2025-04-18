@@ -38,7 +38,7 @@ return {
       },
       filters = {
         dotfiles = false,
-        custom = { "^.git$" },
+        custom = { "^.git$", ".stack-work" },
       },
       git = {
         ignore = false,
