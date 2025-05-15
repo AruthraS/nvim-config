@@ -29,13 +29,13 @@ return {
         "lua_ls",
         "graphql",
         "pyright",
-       "ts_ls",
+        "ts_ls",
         "gopls",
       },
       automatic_installation = true,
     })
 
-    mason_lspconfig.setup_handlers({
+    mason_lspconfig.setup({
       function(server_name)
         lspconfig[server_name].setup({})
       end,
@@ -50,4 +50,3 @@ return {
     })
   end,
 }
-
